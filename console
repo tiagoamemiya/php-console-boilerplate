@@ -1,0 +1,22 @@
+<?php
+require __DIR__.'/vendor/autoload.php';
+
+function getCommandClassInstances(): array {
+  return array_map(
+    function ($filename) {
+      $className = basename($filename, '.php');
+      $class = "PhpConsoleBoilerplate\Console\Commands\\$className";
+      return new $class;
+    }, 
+    glob(__DIR__.'/src/Commands/*.php')
+  );
+}
+
+(new \NunoMaduro\Collision\Provider)->register();
+
+$consoleApp = new Symfony\Component\Console\Application();
+$consoleApp->setName('PHP Console Boilerplate App');
+$consoleApp->setVersion('1.0.0');
+$consoleApp->addCommands(getCommandClassInstances());
+
+$consoleApp->run();
