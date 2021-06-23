@@ -17,18 +17,19 @@ Based on awesome project live coding of @nunomaduro on Laracon Online 2021 [clic
 
 - [Composer](https://github.com/composer/composer)
 - PHP 7.3.27 or higher
-- Test your version with Docker, example: ``` docker run --rm -v $(pwd):/app -w /app php:7.3.27-alpine php console ```
+- Testing PHP version with Docker example: ``` docker run --rm -v $(pwd):/app -w /app php:7.3.27-alpine php console ```
 
 ## Usage
 --------
 
-### 1. See the options and available commands
+### 1. Install dependencies with Composer and see the options and commands availables:
   ```hell
+    composer install
     php console
   ``` 
   ![screenshot 1](./docs/assets/screenshot-1.png)
 
-### 2. Run Hello World Command Example
+### 2. Run Hello World Command Example:
   ```shell
     php console hello-world
   ```
@@ -45,7 +46,7 @@ Based on awesome project live coding of @nunomaduro on Laracon Online 2021 [clic
   ...
 
   ```
-### 4. Create a new Command
+### 4. Create a new Command:
   ```shell
     php console make:command MyAwesomeCommand
   ```
