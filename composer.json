@@ -1,0 +1,14 @@
+{
+  "name": "php-console-boilerplate/console",
+  "description": "A boilerplate to PHP Console App",
+  "keywords": ["console", "boilerplate", "php", "symfony", "collision"],
+  "require": {
+    "symfony/console": "^5.2",
+    "nunomaduro/collision": "^5.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "PhpConsoleBoilerplate\\Console\\": "src/"
+    }
+  }
+}
