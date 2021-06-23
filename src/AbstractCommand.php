@@ -17,7 +17,12 @@ abstract class AbstractCommand extends Command implements CommandInterface
 
     $this->setDescription($this->description);
 
-    $this->setCode(fn (InputInterface $input) => $this->handle($input));
+    $this->setCode(
+      function (InputInterface $input)
+      { 
+        $this->handle($input);
+      }
+    );
     $this->output = new ConsoleOutput();
   }
 

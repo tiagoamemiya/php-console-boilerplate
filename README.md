@@ -4,13 +4,20 @@
 
 A boilerplate to PHP Console App like artisan [Laravel](https://github.com/laravel/laravel).
 
-Based on awesome project live coding of @nunomaduro on Laracon Online 2021 [click here to see](https://www.youtube.com/watch?v=ps9oNo3XA4U).
+Based on awesome project live coding of @nunomaduro on Laracon Online 2021 [click here to see](https://youtu.be/ps9oNo3XA4U).
 
 ## Dependencies
 --------------
 
-- [Synfony Console](https://github.com/symfony/console)
+- [Symfony Console](https://github.com/symfony/console)
 - [Collision](https://github.com/nunomaduro/collision)
+
+## Requirements
+---------------
+
+- [Composer](https://github.com/composer/composer)
+- PHP 7.3.27 or higher
+- Test your version with Docker, example: ``` docker run --rm -v $(pwd):/app -w /app php:7.3.27-alpine php console ```
 
 ## Usage
 --------
@@ -78,4 +85,4 @@ Based on awesome project live coding of @nunomaduro on Laracon Online 2021 [clic
 ## Credits
 ----------
 
- Thank You(Obrigado) @nunomaduro
+ Thank You(Obrigado) @nunomaduro [Nuno Maduro Github Page](https://github.com/nunomaduro)
