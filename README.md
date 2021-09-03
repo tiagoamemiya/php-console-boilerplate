@@ -3,6 +3,7 @@
 ![banner-doc](./docs/assets/banner-doc.png)
 
 A boilerplate to PHP Console App like artisan [Laravel](https://github.com/laravel/laravel).
+@todo Unit Tests
 
 Based on awesome project live coding of @nunomaduro on Laracon Online 2021 [click here to see](https://youtu.be/ps9oNo3XA4U).
 
