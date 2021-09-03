@@ -1,4 +1,4 @@
-name: PHP Composer
+name: PHP Pipeline
 
 on:
   pull_request:
@@ -26,3 +26,6 @@ jobs:
 
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
+
+    - name: Test cli commands
+      run: php console hello-world
