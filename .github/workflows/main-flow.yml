@@ -6,21 +6,26 @@ on:
 
 jobs:
   build:
-    name: Build App
+
     runs-on: ubuntu-latest
+
     steps:
-      - name: Validate composer.json and composer.lock
-      - uses: actions/checkout@v2
-      - run: composer validate --strict
+    - uses: actions/checkout@v2
 
-      - name: Cache Composer packages
-      - id: composer-cache
-      - uses: actions/cache@v2
-      - with:
-          - path: vendor
-          - key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-          - restore-keys: |
-            ${{ runner.os }}-php-
+    - name: Validate composer.json and composer.lock
+      run: composer validate --strict
 
-      - name: Install dependencies
-      - run: composer install --prefer-dist --no-progress
+    - name: Cache Composer packages
+      id: composer-cache
+      uses: actions/cache@v2
+      with:
+        path: vendor
+        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-php-
+          
+    - name: Install dependencies
+      run: composer install --prefer-dist --no-progress
+
+    - name: Test cli commands
+      run: php console hello-world
