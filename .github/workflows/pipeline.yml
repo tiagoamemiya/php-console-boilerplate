@@ -38,7 +38,7 @@ jobs:
         - security_analysis: true
         - composer_required_dev: true
         - composer_ignore_plataform_reqs: true
-        - run: psalm --show-info=true
+      - run: psalm --show-info=true
       
 
 
