@@ -27,13 +27,14 @@ jobs:
 
   static-analysis:
     name: Psalm Static Analysis
+
     runs-on: ubuntu-latest
+
     steps:
-      - name: Psalm
       - uses: docker://vimeo/psalm-github-actions
-      - uses: actions/checkout@v2
-      - run: psalm --show-info=true  
-      - with:
+        with:
           security_analysis: true
           composer_required_dev: true
           composer_ignore_plataform_reqs: true
+      - name: Psalm
+        run: psalm --show-info=true  
