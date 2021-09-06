@@ -30,11 +30,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Psalm
-        uses: docker://vimeo/psalm-github-actions
-        uses: actions/checkout@v2
-        with:
+      - uses: docker://vimeo/psalm-github-actions
+      - uses: actions/checkout@v2
+      - with:
           security_analysis: true
           composer_required_dev: true
           composer_ignore_plataform_reqs: true
-        run: psalm --show-info=true
+      - run: psalm --show-info=true
     
