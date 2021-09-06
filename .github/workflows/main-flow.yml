@@ -1,4 +1,4 @@
-name: PHP Pipeline
+name: App Workflow
 
 on:
   pull_request:
