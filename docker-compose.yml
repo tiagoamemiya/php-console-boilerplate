@@ -1,0 +1,14 @@
+version: '3.3'
+
+services:
+  php:
+    container_name: app-console
+    image: php:7.4-alpine-app-console
+    tty: true
+    build:
+      context: ./docker
+      dockerfile: Dockerfile
+    environment:
+      XDEBUG_MODE: coverage
+    volumes:
+      - ./:/app

@@ -11,5 +11,9 @@
     "psr-4": {
       "PhpConsoleBoilerplate\\Console\\": "src/"
     }
+  },
+  "require-dev": {
+    "vimeo/psalm": "^4.10",
+    "nunomaduro/phpinsights": "^2.0"
   }
 }

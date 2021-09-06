@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace PhpConsoleBoilerplate\Console\Commands;
 
 use PhpConsoleBoilerplate\Console\AbstractCommand;
@@ -16,7 +18,7 @@ class {{ $className }} extends AbstractCommand
     // configure your command here ...
   }
 
-  public function handle(InputInterface $input)
+  public function handle(InputInterface $input): void
   {
     $this->info('Starting Command execution');
     // command logic here ...
