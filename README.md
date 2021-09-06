@@ -23,19 +23,24 @@ Based on awesome project live coding of @nunomaduro on Laracon Online 2021 [clic
 ## Usage
 --------
 
-### 1. Install dependencies with Composer and see the options and commands availables:
-  ```hell
-    composer install
-    php console
+### 1. Initiate local & Install dependencies with Composer :
+```shell
+  make dev/local
+
+```
+
+### 2. Run console and see the options and commands availables:
+  ```shell
+    docker exec -it app-console php console
   ``` 
   ![screenshot 1](./docs/assets/screenshot-1.png)
 
-### 2. Run Hello World Command Example:
+### 3. Run Hello World Command Example:
   ```shell
-    php console hello-world
+    docker exec -it app-console php console hello-world
   ```
   ![screenshot 2](./docs/assets/screenshot-2.png)
-### 3. Output color styles available:
+### 4. Output color styles available:
 
   ```php
   ...
@@ -47,9 +52,9 @@ Based on awesome project live coding of @nunomaduro on Laracon Online 2021 [clic
   ...
 
   ```
-### 4. Create a new Command:
+### 5. Create a new Command:
   ```shell
-    php console make:command MyAwesomeCommand
+    docker exec -it app-console php console make:command MyAwesomeCommand
   ```
    ![screenshot 3](./docs/assets/screenshot-3.png)
 
@@ -82,7 +87,14 @@ Based on awesome project live coding of @nunomaduro on Laracon Online 2021 [clic
   }
   ```
   
-
+### 6. Run Psalm:
+  ```shell
+    make psalm
+  ```
+### 7. Run PHP Insights:
+  ```shell
+    make phpinsights
+  ```
 
 ## Credits
 ----------

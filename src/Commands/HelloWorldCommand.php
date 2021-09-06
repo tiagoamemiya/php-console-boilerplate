@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace PhpConsoleBoilerplate\Console\Commands;
 
 use PhpConsoleBoilerplate\Console\AbstractCommand;
@@ -11,7 +13,7 @@ class HelloWorldCommand extends AbstractCommand
 
   protected $description = 'Say hello to the World';
 
-  public function handle(InputInterface $input)
+  public function handle(InputInterface $input): void
   {
     $this->ln('Hello World!!');
     $this->info('Hello World!!');
