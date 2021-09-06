@@ -24,17 +24,3 @@ jobs:
 
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress
-
-  static-analysis:
-    name: Psalm Static Analysis
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: docker://vimeo/psalm-github-actions
-        with:
-          security_analysis: true
-          composer_required_dev: true
-          composer_ignore_plataform_reqs: true
-      - name: Psalm
-        run: psalm --show-info=true  
