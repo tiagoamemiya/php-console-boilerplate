@@ -1,0 +1,45 @@
+name: App Workflow
+
+on:
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  build:
+    name: Build App
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate composer.json and composer.lock
+      - uses: actions/checkout@v2
+        run: composer validate --strict
+
+      - name: Cache Composer packages
+        id: composer-cache
+        uses: actions/cache@v2
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress
+
+  static-analysis:
+    name: Psalm Static Analysis
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+          uses: actions/checkout@v2
+
+      - name: Psalm
+          uses: docker://vimeo/psalm-github-actions
+          with:
+          security_analysis: true
+          composer_required_dev: true
+          composer_ignore_plataform_reqs: true
+          run: psalm --show-info=true
+      
+
+
+
