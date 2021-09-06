@@ -95,6 +95,7 @@ Based on awesome project live coding of @nunomaduro on Laracon Online 2021 [clic
   ```shell
     make phpinsights
   ```
+  ![screenshot phpinsights](./docs/assets/phpinsights.png)
 
 ## Credits
 ----------
